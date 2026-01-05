@@ -85,6 +85,7 @@
 #let blue-box(header, body) = {
   color-box(header, body, color: rgb("B5EAFF"))
 }
+
 #let solid-box(header, body) = {
   color-box(header, body, color: white, stroke:(black, dash: "solid"))
 }
