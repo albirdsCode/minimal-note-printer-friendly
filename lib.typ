@@ -54,14 +54,15 @@
 
 
 // === Prompting Boxes ===
-#let color-box(header, body, color: rgb("B8F0D3")) = {
+#let color-box(header, body, color: rgb("B8F0D3"), outline: none) = {
   set align(center)
   
   box(
     fill: color,
     inset: 13pt,
     radius: 10pt,
-    width: 100%
+    width: 100%, 
+    stroke: outline
   )[
     #set align(left)
     
@@ -87,13 +88,13 @@
 }
 
 #let solid-box(header, body) = {
-  color-box(header, body, color: white, stroke:(black, dash: "solid"))
+  color-box(header, body, color: white, outline:stroke(paint: black, dash: "solid"))
 }
 
 #let dashed-box(header, body) = {
-  color-box(header, body, color: white, stroke:(black, dash: "densely-dashed"))
+  color-box(header, body, color: white, outline:stroke(paint: black, dash: "densely-dashed"))
 }
 
 #let dotted-box(header, body) = {
-  color-box(header, body, color: white, stroke:(black, dash: "loosely-dotted"))
+  color-box(header, body, color: white, outline:stroke(paint: black, dash: "loosely-dotted"))
 }
