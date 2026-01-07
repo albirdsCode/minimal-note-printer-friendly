@@ -6,6 +6,7 @@
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.1": *
 
+#let printer_friendly = false
 
 // === Template ===
 #let minimal-note(
@@ -97,4 +98,10 @@
 
 #let dotted-box(header, body) = {
   color-box(header, body, color: white, outline:stroke(paint: black, dash: "loosely-dotted"))
+}
+
+#let (rule, useCase, example) = if printer_friendly == true {
+  (solid-box, dashed-box, dotted-box)
+} else {
+  (green-box, orange-box, blue-box)
 }
